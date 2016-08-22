@@ -1,0 +1,1 @@
+json.array! @proposed_tweets, partial: 'proposed_tweets/proposed_tweet', as: :proposed_tweet

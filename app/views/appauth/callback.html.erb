@@ -1,0 +1,16 @@
+<h1>Welcome to Sydney Greentweet (alpha version)!</h1>
+<p>Authentication to the alpha version ofSydneyGreenTweet succeeded. Feel free to send a test tweet from this page.</p>
+<p />
+
+<%= simple_form_for :tweet, url: appauth_tweet_path do |f| %>
+  <%= f.input :content, label: "What's on your mind?", as: :text, input_html: {maxlength: 140, cols: 40}  %>
+  <%= f.hidden_field :user_token,  value: @user_token %>
+  <%= f.hidden_field :user_secret,  value: @user_secret %>
+  <%= f.submit 'Send' %>
+<% end %>
+
+<!--
+<p>Access token is <%= @user_token %></p>
+<p />
+<p>Access secret is <%= @user_secret %></p>
+-->

@@ -1,0 +1,12 @@
+<%= simple_form_for @proposed_tweet, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :user_id %>
+  <%= error_span(@proposed_tweet[:user_id]) %>
+  <%= f.input :description %>
+  <%= error_span(@proposed_tweet[:description]) %>
+  <%= f.input :hashtags %>
+  <%= error_span(@proposed_tweet[:hashtags]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                proposed_tweets_path, :class => 'btn btn-default' %>
+<% end %>

@@ -1,0 +1,7 @@
+<%= simple_form_for :user, url: @authorize_url, method: 'get' do |f| %>
+  <%= @request_token.inspect %>
+  <%= @authorize_url %>
+  <%= f.input :username %>
+  <%= f.input :password %>
+  <%= f.button :submit %>
+<% end %>

@@ -1,0 +1,13 @@
+<%= nonce = SecureRandom.uuid.gsub /-/,'' %>
+<%= simple_form_for :user, url: appauth_callback_path do |f| %>
+  <%= f.input :username %>
+  <%= f.input :password %>
+  <%= f.hidden_field :oauth_consumer_key, value: ENV['twitter_consumer_key'] %>
+  <%= f.hidden_field :oauth_nonce, value: nonce %>
+  <%= f.hidden_field :oauth_signature, value: to_come %>
+  <%= f.hidden_field :oauth_signature_method, value: 'HMAC-SHA1' %>
+  <%= f.hidden_field :oauth_timestamp, value: Time.seconds_since_the_epoch %>
+  <%= f.hidden_field :oauth_token, value: to_come %>
+  <%= f.hidden_field :oauth_version, value: '1.0' %>
+  <%= f.button :submit %>
+<% end %>

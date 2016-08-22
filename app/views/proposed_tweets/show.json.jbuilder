@@ -1,0 +1,1 @@
+json.partial! "proposed_tweets/proposed_tweet", proposed_tweet: @proposed_tweet

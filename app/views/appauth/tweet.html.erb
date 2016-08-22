@@ -1,0 +1,13 @@
+<h1>Tweet Page</h1>
+
+<% begin %>
+  <% # @sydney.update(params['tweet']['content']) %>
+  <!-- <p>It looks like your tweet sent successfullly!</p> -->
+  <% @sydney.user_timeline.each do |item| %>
+    <p><%= item.text %></p>
+    <hr></hr>
+  <% end %>
+<% rescue %>
+  <p>Uh oh, it looks like there's an error. Please let ThatBanjoGuy know.</p>
+<% end %>
+
